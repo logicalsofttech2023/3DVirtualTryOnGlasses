@@ -459,4 +459,4 @@ const JeelizThreeHelper = (function(){
   return that;
 })();
 
-export {JeelizThreeHelper};
+export { JeelizThreeHelper };

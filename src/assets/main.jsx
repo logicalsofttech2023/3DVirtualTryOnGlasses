@@ -1,4 +1,4 @@
-import * as THREE from "three";
+import * as THREE from "./libs/three/v112/three.js";
 import { JeelizThreeHelper } from "./helpers/JeelizThreeHelper.js";
 import { JeelizResizer } from "./helpers/JeelizResizer.js";
 import { JeelizThreeGlassesCreator } from "./JeelizThreeGlassesCreator.js";
