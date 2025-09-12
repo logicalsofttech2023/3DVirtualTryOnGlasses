@@ -467,3 +467,5 @@ try {
   console.log('JeelizThreeHelper ES6 Module not exported');  
   window.JeelizThreeHelper = JeelizThreeHelper;
 }
+
+export default JeelizThreeHelper;
