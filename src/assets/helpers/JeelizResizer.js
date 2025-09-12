@@ -328,14 +328,6 @@ const JeelizResizer = (function(){
   return that;
 })();
 
-// Export ES6 module:
-try {
-  module.exports = JeelizResizer;
-} catch(e){
-  console.log('JeelizResizer ES6 Module not exported');
-  window.JeelizResizer = JeelizResizer;
-}
-
 
 // at the very end of JeelizResizer.js
 export { JeelizResizer };

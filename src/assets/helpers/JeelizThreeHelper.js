@@ -459,13 +459,4 @@ const JeelizThreeHelper = (function(){
   return that;
 })();
 
-
-// Export ES6 module:
-try {
-  module.exports = JeelizThreeHelper;
-} catch(e){
-  console.log('JeelizThreeHelper ES6 Module not exported');  
-  window.JeelizThreeHelper = JeelizThreeHelper;
-}
-
 export {JeelizThreeHelper};
