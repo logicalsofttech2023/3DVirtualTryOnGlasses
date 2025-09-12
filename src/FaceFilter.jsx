@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import JeelizThreeHelper from "./helpers/JeelizThreeHelper.js";
-import JeelizResizer from "./helpers/JeelizResizer.js";
-import JeelizThreeGlassesCreator from "./JeelizThreeGlassesCreator.js";
+import JeelizThreeHelper from "./assets/helpers/JeelizThreeHelper.js";
+import JeelizResizer from "./assets/helpers/JeelizResizer.js";
+import JeelizThreeGlassesCreator from "./assets/JeelizThreeGlassesCreator.js";
 
 let THREECAMERA = null;
 let currentGlasses = null;
