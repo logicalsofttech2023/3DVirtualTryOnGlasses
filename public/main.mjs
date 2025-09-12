@@ -8,7 +8,7 @@ function detect_callback(faceIndex, isDetected) {
 
 // Load GLB glasses at runtime
 function loadGLBGlasses(glbPath, threeStuffs) {
-  const loader = new THREE.GLTFLoader();
+  const loader = new GLTFLoader();
   loader.load(
     glbPath,
     (gltf) => {
