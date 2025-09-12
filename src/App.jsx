@@ -1,11 +1,43 @@
 import React, { useEffect, useRef } from "react";
-import { startJeeliz } from "./assets/main.jsx";
+
 
 function App() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    startJeeliz("jeeFaceFilterCanvas");
+    // Dynamically load Jeeliz scripts
+    const loadScript = (src) =>
+      new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+      });
+
+    async function initJeeliz() {
+      try {
+        // load all dependencies in sequence
+        await loadScript("/module/jeelizFaceFilter.js");
+        await loadScript("/libs/three/v112/three.js");
+        await loadScript("/helpers/JeelizThreeHelper.js");
+        await loadScript("/helpers/JeelizResizer.js");
+        await loadScript("/JeelizThreeGlassesCreator.js");
+        await loadScript("/main.js");
+
+        console.log("✅ Jeeliz scripts loaded");
+
+        // Call init function from main.js if available
+        if (window.main) {
+          window.main(canvasRef.current);
+        }
+      } catch (err) {
+        console.error("❌ Error loading Jeeliz scripts:", err);
+      }
+    }
+
+    initJeeliz();
   }, []);
 
   return (
