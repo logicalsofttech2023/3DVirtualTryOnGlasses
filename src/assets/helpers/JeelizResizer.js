@@ -338,4 +338,4 @@ try {
 
 
 // at the very end of JeelizResizer.js
-export default JeelizResizer;
+export { JeelizResizer };

@@ -84,4 +84,4 @@ const JeelizThreeGlassesCreator = function(spec){
   };
 }
 
-export default JeelizThreeGlassesCreator;
+export { JeelizThreeGlassesCreator };

@@ -1,11 +1,23 @@
-import React from "react";
-import FaceFilter from "./FaceFilter";
+import React, { useEffect, useRef } from "react";
+import { startJeeliz } from "./assets/main.js";
 
 function App() {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    startJeeliz("jeeFaceFilterCanvas");
+  }, []);
+
   return (
-    <div style={{ width: "100vw", height: "100vh", textAlign: "center" }}>
+    <div style={{ textAlign: "center" }}>
       <h2>React + Jeeliz VTO</h2>
-      <FaceFilter />
+      <canvas
+        ref={canvasRef}
+        id="jeeFaceFilterCanvas"
+        width="600"
+        height="600"
+        style={{ border: "1px solid #ccc" }}
+      ></canvas>
     </div>
   );
 }

@@ -468,4 +468,4 @@ try {
   window.JeelizThreeHelper = JeelizThreeHelper;
 }
 
-export default JeelizThreeHelper;
+export {JeelizThreeHelper};
