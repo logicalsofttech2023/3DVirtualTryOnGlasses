@@ -83,3 +83,5 @@ const JeelizThreeGlassesCreator = function(spec){
     occluder: occluderMesh
   };
 }
+
+export default JeelizThreeGlassesCreator;
