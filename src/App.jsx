@@ -1,12 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import jeelizFaceFilter from "./assets/module/jeelizFaceFilter.js";
-import three from "./assets/libs/three/v112/three.js"
-import JeelizThreeHelper from "./assets/helpers/JeelizThreeHelper.js";
-import JeelizResizer from "./assets/helpers/JeelizResizer.js";
-import JeelizThreeGlassesCreator from "./assets/JeelizThreeGlassesCreator.js";
-import main from "./assets/main.js";
-import "./App.css";
-
 
 function App() {
   const canvasRef = useRef(null);
@@ -26,12 +18,12 @@ function App() {
     async function initJeeliz() {
       try {
         // load all dependencies in sequence
-        await loadScript(jeelizFaceFilter);
-        await loadScript(three);
-        await loadScript(JeelizThreeHelper);
-        await loadScript(JeelizResizer);
-        await loadScript(JeelizThreeGlassesCreator);
-        await loadScript(main);
+        await loadScript("/module/jeelizFaceFilter.js");
+        await loadScript("/libs/three/v112/three.js");
+        await loadScript("/helpers/JeelizThreeHelper.js");
+        await loadScript("/helpers/JeelizResizer.js");
+        await loadScript("/JeelizThreeGlassesCreator.js");
+        await loadScript("/main.js");
 
         console.log("✅ Jeeliz scripts loaded");
 
