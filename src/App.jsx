@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 
 function App() {
