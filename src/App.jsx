@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { startJeeliz } from "./assets/main.js";
+import { startJeeliz } from "./assets/main.jsx";
 
 function App() {
   const canvasRef = useRef(null);
