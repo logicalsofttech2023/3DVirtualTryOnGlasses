@@ -21,10 +21,10 @@ function init_threeScene(spec) {
 
   // CREATE THE GLASSES AND ADD THEM
   const r = JeelizThreeGlassesCreator({
-    envMapURL: "envMap.jpg",
-    frameMeshURL: "models3D/glassesFramesBranchesBent.json",
-    lensesMeshURL: "models3D/glassesLenses.json",
-    occluderURL: "models3D/face.json"
+    envMapURL: "./envMap.jpg",
+    frameMeshURL: "./models3D/glassesFramesBranchesBent.json",
+    lensesMeshURL: "./models3D/glassesLenses.json",
+    occluderURL: "./models3D/face.json"
   });
 
   // vertical offset:
