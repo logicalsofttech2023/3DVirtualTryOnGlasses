@@ -1,35 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useRef } from "react";
+import jeelizFaceFilter from "./assets/models3D/jeelizFaceFilter.js";
+import three from "./assets/libs/three/v112/three.js"
+import JeelizThreeHelper from "./assets/helpers/JeelizThreeHelper.js";
+import JeelizResizer from "./assets/helpers/JeelizResizer.js";
+import JeelizThreeGlassesCreator from "./assets/JeelizThreeGlassesCreator.js";
+import main from "./assets/main.js";
+import "./App.css";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    // Dynamically load Jeeliz scripts
+    const loadScript = (src) =>
+      new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.body.appendChild(script);
+      });
+
+    async function initJeeliz() {
+      try {
+        // load all dependencies in sequence
+        await loadScript(jeelizFaceFilter);
+        await loadScript(three);
+        await loadScript(JeelizThreeHelper);
+        await loadScript(JeelizResizer);
+        await loadScript(JeelizThreeGlassesCreator);
+        await loadScript(main);
+
+        console.log("✅ Jeeliz scripts loaded");
+
+        // Call init function from main.js if available
+        if (window.main) {
+          window.main(canvasRef.current);
+        }
+      } catch (err) {
+        console.error("❌ Error loading Jeeliz scripts:", err);
+      }
+    }
+
+    initJeeliz();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ textAlign: "center" }}>
+      <h2>React + Jeeliz VTO</h2>
+      <canvas
+        ref={canvasRef}
+        id="jeeFaceFilterCanvas"
+        width="600"
+        height="600"
+        style={{ border: "1px solid #ccc" }}
+      ></canvas>
+    </div>
+  );
 }
 
-export default App
+export default App;
