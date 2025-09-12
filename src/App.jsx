@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import jeelizFaceFilter from "./assets/models3D/jeelizFaceFilter.js";
+import jeelizFaceFilter from "./assets/module/jeelizFaceFilter.js";
 import three from "./assets/libs/three/v112/three.js"
 import JeelizThreeHelper from "./assets/helpers/JeelizThreeHelper.js";
 import JeelizResizer from "./assets/helpers/JeelizResizer.js";
