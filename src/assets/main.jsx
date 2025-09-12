@@ -3,6 +3,10 @@ import { JeelizThreeHelper } from "./helpers/JeelizThreeHelper.js";
 import { JeelizResizer } from "./helpers/JeelizResizer.js";
 import { JeelizThreeGlassesCreator } from "./JeelizThreeGlassesCreator.js";
 import { JEELIZFACEFILTER } from "./module/jeelizFaceFilter.js";
+import envMap from "./envMap.jpg"
+import glassesFramesBranchesBent from "./models3D/glassesFramesBranchesBent.json";
+import glassesLenses from "./models3D/glassesLenses.json";
+import face from "./models3D/face.json";
 
 let THREECAMERA = null;
 
@@ -25,10 +29,10 @@ function init_threeScene(spec) {
 
   // CREATE THE GLASSES AND ADD THEM
   const r = JeelizThreeGlassesCreator({
-    envMapURL: "envMap.jpg",
-    frameMeshURL: "models3D/glassesFramesBranchesBent.json",
-    lensesMeshURL: "models3D/glassesLenses.json",
-    occluderURL: "models3D/face.json",
+    envMapURL: envMap,
+    frameMeshURL: glassesFramesBranchesBent,
+    lensesMeshURL: glassesLenses,
+    occluderURL: face,
   });
 
   // vertical offset:
