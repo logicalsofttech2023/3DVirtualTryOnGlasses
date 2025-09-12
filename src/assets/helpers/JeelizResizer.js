@@ -335,3 +335,7 @@ try {
   console.log('JeelizResizer ES6 Module not exported');
   window.JeelizResizer = JeelizResizer;
 }
+
+
+// at the very end of JeelizResizer.js
+export default JeelizResizer;

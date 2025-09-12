@@ -46,7 +46,8 @@ export default function FaceFilter() {
   };
 
   const init_faceFilter = (videoSettings) => {
-    if (!window.JEELIZFACEFILTER) return console.error("JEELIZFACEFILTER missing");
+    if (!window.JEELIZFACEFILTER)
+      return console.error("JEELIZFACEFILTER missing");
 
     window.JEELIZFACEFILTER.init({
       followZRot: true,
@@ -68,12 +69,18 @@ export default function FaceFilter() {
     if (!canvasRef.current) return;
 
     JeelizResizer.size_canvas({
-      canvasId: "jeeFaceFilterCanvas",
+      canvas: canvasRef.current,
       callback: (isError, bestVideoSettings) => {
         if (!isError) init_faceFilter(bestVideoSettings);
       },
     });
   }, []);
 
-  return <canvas ref={canvasRef} id="jeeFaceFilterCanvas" style={{ width: "100%", height: "100%" }} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      id="jeeFaceFilterCanvas"
+      style={{ width: "100%", height: "100%" }}
+    />
+  );
 }
