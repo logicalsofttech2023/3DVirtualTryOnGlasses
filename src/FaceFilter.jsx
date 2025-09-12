@@ -41,14 +41,14 @@ export default function FaceFilter() {
     threeStuffs.renderer.outputEncoding = THREE.sRGBEncoding;
 
     // Load default glasses
-    loadGLBGlasses("/models3D/aviator.glb", threeStuffs);
+    loadGLBGlasses("/assets/models3D/aviator.glb", threeStuffs);
 
     // Occluder
     const r = JeelizThreeGlassesCreator({
-      envMapURL: "/envMap.jpg",
-      frameMeshURL: "/models3D/glassesFramesBranchesBent.json",
-      lensesMeshURL: "/models3D/glassesLenses.json",
-      occluderURL: "/models3D/face.json",
+      envMapURL: "/assets/envMap.jpg",
+      frameMeshURL: "/assets/models3D/glassesFramesBranchesBent.json",
+      lensesMeshURL: "/assets/models3D/glassesLenses.json",
+      occluderURL: "/assets/models3D/face.json",
     });
     const dy = 0.07;
     r.occluder.rotation.set(0.3, 0, 0);
