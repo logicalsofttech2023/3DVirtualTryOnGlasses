@@ -24,7 +24,7 @@ function App() {
         await loadScript("/helpers/JeelizThreeHelper.js");
         await loadScript("/helpers/JeelizResizer.js");
         await loadScript("/JeelizThreeGlassesCreator.js");
-        await loadScript("/main.js");
+        // await loadScript("/main.js");
 
         console.log("✅ Jeeliz scripts loaded");
 
