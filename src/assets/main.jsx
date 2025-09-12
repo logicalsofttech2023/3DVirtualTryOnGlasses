@@ -1,12 +1,12 @@
-import * as THREE from "./libs/three/v112/three.js";
+import * as THREE from "three";
 import { JeelizThreeHelper } from "./helpers/JeelizThreeHelper.js";
 import { JeelizResizer } from "./helpers/JeelizResizer.js";
 import { JeelizThreeGlassesCreator } from "./JeelizThreeGlassesCreator.js";
 import { JEELIZFACEFILTER } from "./module/jeelizFaceFilter.js";
-import envMap from "./envMap.jpg"
-import glassesFramesBranchesBent from "./models3D/glassesFramesBranchesBent.json";
-import glassesLenses from "./models3D/glassesLenses.json";
-import face from "./models3D/face.json";
+import envMap from "./envMap.jpg?url";
+import glassesFramesBranchesBent from "./models3D/glassesFramesBranchesBent.json?url";
+import glassesLenses from "./models3D/glassesLenses.json?url";
+import face from "./models3D/face.json?url";
 
 let THREECAMERA = null;
 
@@ -59,7 +59,7 @@ function init_faceFilter(videoSettings, canvasId) {
   JEELIZFACEFILTER.init({
     followZRot: true,
     canvasId: canvasId,
-    NNCPath: "./neuralNets/NN_DEFAULT.json", // ✅ public folder में होना चाहिए
+    NNCPath: "./neuralNets/NN_DEFAULT.json",
     maxFacesDetected: 1,
     callbackReady: function (errCode, spec) {
       if (errCode) {
