@@ -20,20 +20,20 @@ function init_threeScene(spec) {
   threeStuffs.renderer.outputEncoding = THREE.sRGBEncoding;
 
   // CREATE THE GLASSES AND ADD THEM
-  const r = JeelizThreeGlassesCreator({
-    envMapURL: "envMap.jpg",
-    frameMeshURL: "models3D/glassesFramesBranchesBent.json",
-    lensesMeshURL: "models3D/glassesLenses.json",
-    occluderURL: "models3D/face.json"
-  });
-
-
   // const r = JeelizThreeGlassesCreator({
   //   envMapURL: "envMap.jpg",
-  //   frameMeshURL: "CostomModels3D/glassesFramesBranchesBent.json",
-  //   lensesMeshURL: "CostomModels3D/glassesLenses.json",
-  //   occluderURL: "CostomModels3D/face.json"
+  //   frameMeshURL: "models3D/glassesFramesBranchesBent.json",
+  //   lensesMeshURL: "models3D/glassesLenses.json",
+  //   occluderURL: "models3D/face.json"
   // });
+
+
+  const r = JeelizThreeGlassesCreator({
+    envMapURL: "envMap.jpg",
+    frameMeshURL: "CostomModels3D/glassesFramesBranchesBent.json",
+    lensesMeshURL: "CostomModels3D/glassesLenses.json",
+    occluderURL: "models3D/face.json"
+  });
 
   // vertical offset:
   const dy = 0.07;
